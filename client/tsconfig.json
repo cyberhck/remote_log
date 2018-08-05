@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "src/app/*",
+        "src/app/redux/*"
+      ]
+    },
+    "outDir": "build",
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "lib": ["es2015.generator", "es5", "scripthost", "dom", "es2015.iterable", "es6"],
+    "inlineSources": false,
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "jsx": "react",
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "useBabel": true
+  }
+}
