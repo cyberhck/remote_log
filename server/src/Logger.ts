@@ -44,7 +44,7 @@ export class Logger {
                 return LogLevel.WARNING;
             case "error":
                 return LogLevel.ERROR;
-            case "ciritical":
+            case "critical":
                 return LogLevel.CRITICAL;
             case "alert":
                 return LogLevel.ALERT;
