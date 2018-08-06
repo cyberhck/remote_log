@@ -6,10 +6,6 @@
  * require('./bootstrap/css/bootstrap.min.css');
  */
 // import {fabric} from "fabric";
-// tslint:disable:no-submodule-imports
-import "rc-slider/assets/index.css";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 
 // tslint:enable
 // import {setupFabric} from "../app/fabric/Fabric";
