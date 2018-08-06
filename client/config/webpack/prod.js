@@ -13,25 +13,13 @@ var config = {
   mode: 'production',
 
   entry: {
-    app: './src/client.tsx',
-    vendor: [
-      './src/vendor/main.ts',
-      'react',
-      'react-dom',
-      'react-helmet',
-      'react-redux',
-      'react-router5',
-      'redux-router5',
-      'redux',
-      'redux-saga',
-      'router5',
-    ]
+    app: ['./src/client.tsx', './src/vendor/main.ts']
   },
 
   output: {
     path: path.resolve('./build/public'),
     publicPath: '/public/',
-    filename: 'js/[name].[chunkhash].js'
+    filename: 'js/[name].js'
   },
 
   module: {
@@ -82,19 +70,6 @@ var config = {
       }
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'js/[name].[chunkhash].js',
-      minChunks: Infinity
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new ManifestPlugin({
-      fileName: '../manifest.json'
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         BROWSER: JSON.stringify(true),
@@ -109,5 +84,6 @@ utils.copySyncIfDoesntExist('./config/main.js', './config/main.local.js');
 utils.createIfDoesntExist('./build');
 utils.createIfDoesntExist('./build/public');
 utils.copySync('./src/favicon.ico', './build/public/favicon.ico', true);
+utils.copySync('./src/index.html', './build/index.html');
 
 module.exports = config;

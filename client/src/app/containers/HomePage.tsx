@@ -9,7 +9,6 @@ import {IStore} from "../redux/rootReducer";
 const styles = {
     levels: {
         alert: style({
-            borderLeft: "5px solid",
             color: "#f50057"
         }),
         critical: style({
